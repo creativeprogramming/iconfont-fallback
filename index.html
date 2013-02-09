@@ -79,11 +79,11 @@
 <script>
   $(function() {
 
-    var ua = navigator.userAgent;
-    if( ua.indexOf("Android") >= 0 )
-    {
-      var androidversion = parseFloat(ua.slice(ua.indexOf("Android")+8)); 
-      $('#ua').text(androidversion);
+    var ua = navigator.userAgent.toLowerCase();
+    var v = navigator.appVersion;
+    if( ua.indexOf("android") >= 0 ) {
+      var androidversion = parseFloat(ua.slice(ua.indexOf("android")+8)); 
+      $('#ua').text('Android version '+v);
     }
     
     $(document).on('click', '#run', function(e) {
