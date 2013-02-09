@@ -79,7 +79,12 @@
 <script>
   $(function() {
 
-    $('#ua').text(navigator.userAgent);
+    var ua = navigator.userAgent;
+    if( ua.indexOf("Android") >= 0 )
+    {
+      var androidversion = parseFloat(ua.slice(ua.indexOf("Android")+8)); 
+      $('#ua').text(androidversion);
+    }
     
     $(document).on('click', '#run', function(e) {
       e.preventDefault();
