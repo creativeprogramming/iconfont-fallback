@@ -1,3 +1,50 @@
+@font-face {
+  font-family: 'icomoon';
+  src:url('fonts/icomoon.eot');
+  src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.woff') format('woff'),
+    url('fonts/icomoon.ttf') format('truetype'),
+    url('fonts/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"]:before {
+*/
+.icon-home:before, .icon-home-2:before, .icon-home-3:before, .icon-office:before, .icon-newspaper:before {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-home:before {
+  content: "\e000";
+}
+.icon-home-2:before {
+  content: "\e001";
+}
+.icon-home-3:before {
+  content: "\e002";
+}
+.icon-office:before {
+  content: "\e003";
+}
+.icon-newspaper:before {
+  content: "\e004";
+}
+
+.icon-fallback img {
+  width: 16px;
+}
+
+
+
 /* =============================================================================
    HTML5 Boilerplate CSS: h5bp.com/css
    ========================================================================== */

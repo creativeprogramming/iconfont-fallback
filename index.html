@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Icon Font Fallback</title>
-  <link href="css/style.css" rel="stylesheet" />
   <link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
-  <link href="stacktable.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -31,19 +30,46 @@
 
 
 
-  <p>This is a icon font fallback solution for browsers that don’t support webfonts...</p>
+  <p>This is a icon font fallback solution for browsers that don’t support webfonts. It is designed for use with the <a href="http://icomoon.io/app">IcoMoon Icon Font Web App</a>. It is my hope that this plugin will soon become obsolete as mobile browsers continue to improve. So, if this seems a little bit hacky, that’s because it is. ☺</p>
 
   <!-- <h2>Download</h2>
   <p>Source files <a href="https://github.com/johnpolacek/stacktable.js/" target="_blank">on github</a> or <a href="https://github.com/johnpolacek/stacktable.js/zipball/master/" target="_blank">download the zip</a>.</p> -->
 
   <h2>How to Use</h2>
   
-  <p>...</p>
+  <p>Go to <a href="http://icomoon.io/app">IcoMoon</a> and build your icon font set. Download both the font and the images zips. <strong>Important: This solution is only designed to work with IcoMoon’s class-based implementation (not data-)</strong></p>
+
+  <p>From the images download, grab the png’s and put them in a folder in your project. By default, the fallback plugin will look for them in a <code>img/icon</code> directory. You can specify a different directory via the <code>iconDir</code> setting.</p>
+
+  <p>Assign a class to every instance you are using an icon font, such as <code>.icon</code>. Then run the fallback plugin on that selector. After it runs, the <code>.icon-fallback</code> class will be added so that you can add styles to the fallback replacement, such as for proper sizing.</p>
 
   <h2>Simple Example <a id="run" href="#">run »</a></h2>
-  <pre>$('body').iconfontFallback();</pre>
+  <pre>$('.icon').iconfontFallback();</pre>
 
-  
+  <div id="example-simple">
+    <div>
+      <span aria-hidden="true" class="icon icon-home"></span>
+      &nbsp;icon-home
+    </div>
+    <div>
+      <span aria-hidden="true" class="icon icon-home-2"></span>
+      &nbsp;icon-home-2
+    </div>
+    <div>
+      <span aria-hidden="true" class="icon icon-home-3"></span>
+      &nbsp;icon-home-3
+    </div>
+    <div>
+      <span aria-hidden="true" class="icon icon-office"></span>
+      &nbsp;icon-office
+    </div>
+    <div>
+      <span aria-hidden="true" class="icon icon-newspaper"></span>
+      &nbsp;icon-newspaper
+    </div>
+  </div>
+
+</div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/libs/jquery-1.8.1.min.js"><\/script>')</script> </script>
@@ -52,11 +78,12 @@
 
 <script>
   $(function() {
-    $('body').iconfontFallback();
+    
     $(document).on('click', '#run', function(e) {
       e.preventDefault();
-      // $('#simple-example-table').stacktable({hideOriginal:true});
+      $('.icon').iconfontFallback();
       $(this).replaceWith('<span>ran</span>');
+      $('#example-simple').append('<p><em>All the icons have been replaced with their png fallback image.</em></p>')
     });
   });
   

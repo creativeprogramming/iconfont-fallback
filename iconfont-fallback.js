@@ -13,10 +13,23 @@
 
   $.fn.iconfontFallback = function(options) {
     var $target = this,
-        defaults = {},
+        defaults = {iconDir:'img/icons'},
         settings = $.extend({}, defaults, options);
 
     $('#ua').text(navigator.userAgent);
+
+    $target
+		.css('font-size',0)
+		.each(function() {
+			var iconClass = $(this).attr('class');
+			var iconName = iconClass.substr(iconClass.indexOf('icon-')+5) +'.png';
+			// remove hyphens
+			var hyphens = new RegExp("\-", "g");
+			iconName = iconName.replace(hyphens,'');
+			$(this)
+				.html('<img src="'+settings.iconDir+'/'+iconName+'" />')
+				.addClass('icon-fallback');
+		});
 
     return $target;
   };
