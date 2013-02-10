@@ -41,6 +41,8 @@ you can use the generic selector below, but it's slower:
 
 .icon-fallback img {
   width: 16px;
+  position: relative;
+  top: -3px;
 }
 
 
@@ -128,8 +130,6 @@ td { vertical-align: top; }
 
 body { color: #333; padding: 0 1.5em 3em; }
 
-header { text-align: center; padding-top: 10px; }
-
 h1, h2, h3 {
   font-family: 'Courgette', Arial, sans-serif;
   font-weight: 700;
@@ -138,11 +138,6 @@ h1, h2, h3 {
 h1 { font-size: 4em; }
 h2 a, h2 span { font-size: .8em; }
 h3 { font-size: 1.1em; }
-header h3 {
-  margin: 0 auto 1em;
-  width: 70%;
-}
-header { margin-bottom: 1em; }
 p, pre { margin: 0.5em 0 1.5em; }
 pre {
   font-size: .8em;
@@ -159,39 +154,19 @@ pre {
   max-width: 800px;
   margin: 0 auto;
 }
+header { text-align: center; padding-top: 10px; margin-bottom: 1em; }
+header h3 { margin: 0 auto 1em; width: 70%; }
 
-.follow-btn { width: 169px; margin: 0 auto; }
-
-.example { margin-bottom: 1.5em; }
-.example div {
-  float: left;
-  text-align: center;
-  background: #DDD;
-  margin: 10px;
-  padding: 10px;
-}
-
-.sub { font-weight: bold; }
-
-#author {
-  overflow: hidden;
-  margin-bottom: 1.5em;
-}
-
+#author { overflow: hidden; margin-bottom: 1.5em; }
 #author span {
   display: inline-block;
   *display: block;
   zoom: 1;
   margin-top: 5px;
 }
+.follow-btn { width: 169px; margin: 0 auto; }
 
-#resize-graphic {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  opacity: .6;
-}
-
+.example { margin-bottom: 1.5em; }
 
 /* =============================================================================
    Non-Semantic Helper Classes
