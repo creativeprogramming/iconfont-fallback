@@ -24,9 +24,6 @@
 		.each(function() {
 			var iconClass = $(this).attr('class');
 			var iconName = iconClass.substr(iconClass.indexOf('icon-')+5) +'.png';
-			// remove hyphens
-			var hyphens = new RegExp('\-', 'g');
-			iconName = iconName.replace(hyphens,'');
 			$(this)
 				.html('<img src="'+settings.iconDir+'/'+iconName+'" />')
 				.addClass('icon-fallback');
