@@ -16,7 +16,7 @@
 
   $.fn.iconfontFallback = function(options) {
     var $target = this,
-        defaults = {iconDir:'img/icons'},
+        defaults = {iconDir:'img/icons',removeHyphens:true},
         settings = $.extend({}, defaults, options);
 
     $target
@@ -24,6 +24,11 @@
 		.each(function() {
 			var iconClass = $(this).attr('class');
 			var iconName = iconClass.substr(iconClass.indexOf('icon-')+5) +'.png';
+			// remove hyphens
+			if (settings.removeHyphens) {
+				var hyphens = new RegExp('\-', 'g');
+				iconName = iconName.replace(hyphens,'');
+			}
 			$(this)
 				.html('<img src="'+settings.iconDir+'/'+iconName+'" />')
 				.addClass('icon-fallback');
